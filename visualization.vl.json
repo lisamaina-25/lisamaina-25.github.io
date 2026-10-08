@@ -1,0 +1,15 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/US%20Diesel%20Price.csv"
+  },
+  "title": {"text": "US Diesel Prices 1995-2026"},
+  "width": 300,
+  "height": 300,
+  "mark": {"type": "line", "color": "red"},
+  "encoding": {
+    "x": {"field": "Date", "type": "temporal"},
+    "y": {"field": "Value", "type": "quantitative"}
+  },
+  "config": {}
+}
