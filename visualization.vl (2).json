@@ -1,0 +1,18 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "data": {
+    "url": "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/Ghana%20Health%20Workforce%20Density.csv"
+  },
+  "title": {
+    "text": "Ghana Health Workforce Density",
+    "subtitle": "1 Clinician per 10,000 Residents"
+  },
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "year"},
+    "y": {"field": "rate", "type": "quantitative"},
+    "color": {"field": "symbol", "type": "nominal"}
+  },
+  "config": {}
+}
