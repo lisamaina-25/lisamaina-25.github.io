@@ -1,11 +1,13 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
-  "description": "Stock prices of 5 Tech Companies over Time.",
+  "description": "Kenya Health Workforce Density",
   "data": {
     "url": "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/Kenya%20Health%20Workforce%20Density.csv"
   },
+   "width": 300,
+  "height": 220,
   "title": {
-    "text": "Kenya Health Workforce Density",
+    "text": "Kenya Health Workforce Density 2002-2024",
     "subtitle": "1 Clinician per 10,000 Residents"
   },
   "mark": {"type": "line", "point": true},
