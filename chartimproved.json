@@ -1,0 +1,167 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "description": "Bubble chart of modern contraceptive use against women's average years of schooling, by country, for 2015 and 2020. Bubble size shows population and color shows world region.",
+  "width": "container",
+  "autosize": {"type": "fit", "contains": "padding"},
+  "height": 350,
+  "data": {
+    "url": "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/contraception_schoolyrs15-20.csv"
+  },
+  "title": {
+    "text": "Modern contraceptive usage associated with higher average years of schooling for women",
+    "fontSize": 16,
+    "subtitle": [
+      "Share of married or co-habiting women who use at least one modern method of contraception",
+      "vs. average years of formal education of women aged 15-64. Selected year shown solid."
+    ],
+    "align": "left",
+    "anchor": "start"
+  },
+  "params": [
+    {
+      "name": "year_sel",
+      "value": "Both",
+      "bind": {
+        "input": "radio",
+        "options": ["Both", "2015", "2020"],
+        "name": "Highlight year: "
+      }
+    }
+  ],
+  "transform": [
+    {
+      "calculate": "year_sel == 'Both' ? 0.9 : (toString(datum.Year) == year_sel ? 0.9 : 0.12)",
+      "as": "op"
+    },
+    {
+      "calculate": "year_sel == 'Both' ? 0.9 : (toString(datum.Year) == year_sel ? 0.9 : 0.3)",
+      "as": "sop"
+    }
+  ],
+  "encoding": {
+    "x": {
+      "field": "Average years of schooling for women aged 15-64",
+      "type": "quantitative",
+      "scale": {"zero": true},
+      "axis": {
+        "values": [2, 4, 6, 8, 10, 12],
+        "title": "Average years of schooling (women 15-64)"
+      }
+    },
+    "y": {
+      "field": "Contraception usage",
+      "type": "quantitative",
+      "scale": {"zero": true},
+      "axis": {
+        "values": [10, 20, 30, 40, 50, 60, 70, 80],
+        "title": "Contraception usage (% of women)",
+        "labelExpr": "datum.value + '%'"
+      }
+    }
+  },
+  "layer": [
+    {
+      "mark": {"type": "circle", "filled": true, "strokeWidth": 1.2},
+      "encoding": {
+        "color": {
+          "field": "World region according to OWID",
+          "type": "nominal",
+          "title": null,
+          "scale": {
+            "domain": [
+              "Africa",
+              "Asia",
+              "North America",
+              "South America",
+              "Europe",
+              "Oceania"
+            ],
+            "scheme": "category10"
+          },
+          "legend": {"symbolType": "square"}
+        },
+        "stroke": {
+          "field": "World region according to OWID",
+          "type": "nominal",
+          "scale": {
+            "domain": [
+              "Africa",
+              "Asia",
+              "North America",
+              "South America",
+              "Europe",
+              "Oceania"
+            ],
+            "scheme": "category10"
+          },
+          "legend": null
+        },
+        "fillOpacity": {"field": "op", "type": "quantitative", "scale": null},
+        "strokeOpacity": {
+          "field": "sop",
+          "type": "quantitative",
+          "scale": null
+        },
+        "size": {
+          "field": "Population",
+          "type": "quantitative",
+          "scale": {
+            "type": "threshold",
+            "domain": [5000000, 50000000, 150000000, 250000000],
+            "range": [25, 250, 750, 1250, 2100]
+          },
+          "legend": {"title": "Population", "format": "~s"}
+        },
+        "order": [
+          {"field": "op", "type": "quantitative"},
+          {"field": "Population", "type": "quantitative", "sort": "descending"}
+        ],
+        "tooltip": [
+          {"field": "Entity", "type": "nominal", "title": "Country"},
+          {"field": "Year", "type": "nominal"},
+          {
+            "field": "Contraception usage",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Contraception usage (%)"
+          },
+          {
+            "field": "Average years of schooling for women aged 15-64",
+            "type": "quantitative",
+            "format": ".1f",
+            "title": "Years of schooling"
+          },
+          {
+            "field": "Population",
+            "type": "quantitative",
+            "format": ",",
+            "title": "Population (people)"
+          }
+        ]
+      }
+    },
+    {
+      "transform": [
+        {"joinaggregate": [{"op": "count", "as": "n"}], "groupby": ["Entity"]},
+        {
+          "filter": "indexof(['Kenya','Rwanda','Uganda','Indonesia','Peru','United States','Niger','Japan'], datum.Entity) >= 0"
+        },
+        {
+          "filter": "year_sel == 'Both' ? (datum.n == 1 || datum.Year == 2020) : toString(datum.Year) == year_sel"
+        }
+      ],
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "dy": -8,
+        "fontSize": 13,
+        "color": "#333"
+      },
+      "encoding": {"text": {"field": "Entity", "type": "nominal"}}
+    }
+  ],
+  "config": {
+    "font": "'Playfair Display', Georgia, 'Times New Roman', 'Liberation Serif', serif"
+  }
+}
