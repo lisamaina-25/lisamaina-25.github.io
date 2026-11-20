@@ -76,7 +76,7 @@
         <div class="chart-description">
             <h2>Coding Challenge 3: Policy debate </h2>
             <p>
-
+                something about how kenya is borrowing more money than it can potentially pay back, and how this is a problem for the economy. The chart shows the national debt of Kenya over time, where that debt comes from, and how it has increased significantly in recent years. The second chart shows the cost of servicing that debt as a ratio of GDP, which is also increasing. This is also contains a line chart with point markers showing the GDP growth rate in the same years.
             </p>
         </div>
         <div class="chartGrid">
@@ -89,11 +89,24 @@
         <div class="chart-description">
             <h2>Coding Challenge 4: </h2>
             <p>
-
+                This is a picture of the original chart
             </p>
         </div>
-        <figure id="Location8"></figure>
-
+        <figure id="Location8">
+            <img src="https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/main/cc4%20original.png" alt="FT chart to improve" style="width: 650px;">
+        </figure>
+        <div class="chart-description">
+            <p>
+                This is a replication of the original chart (to the best of my ability) using vegaLite. The chart shows the percentage of women aged 15-49 who use contraception and average number of school years for women in several countries in 2025. 
+            </p>
+        </div>
+        <figure id="Location9"></figure>
+        <div class="chart-description">
+            <p>
+                This is an improved version of the original chart. I have changed the colour scheme to make it more accessible, and I have also added a title and axis labels to make the chart easier to understand. The previous chart claimed to show the percentage of women aged 15-49 who use contraception and average number of school years for women in several countries in 2025, but it actually showed share of women who use contraception in 205 and the most recent available data on average years of schooling (none of which is from 2025). I have corrected this in the improved chart, and I have added a toggle to choose which year to show the data for.
+            </p>
+        </div>
+        <figure id="Location10"></figure>
         <!-- ===================== CHALLENGE 5 ===================== -->
         <div class="chart-description">
             <h2>Coding Challenge 5: </h2>
@@ -101,7 +114,7 @@
 
             </p>
         </div>
-        <figure id="Location9"></figure>
+        <figure id="Location11"></figure>
 
         <!-- ===================== CHALLENGE 6 ===================== -->
         <div class="chart-description">
@@ -110,7 +123,7 @@
 
             </p>
         </div>
-        <figure id="Location10"></figure>
+        <figure id="Location12"></figure>
 
         <!-- ===================== CHALLENGE 7 ===================== -->
         <div class="chart-description">
@@ -119,7 +132,7 @@
 
             </p>
         </div>
-        <figure id="Location11"></figure>
+        <figure id="Location13"></figure>
 
         <!-- ===================== CHALLENGE 8 ===================== -->
         <div class="chart-description">
@@ -128,7 +141,7 @@
 
             </p>
         </div>
-        <figure id="Location12"></figure>
+        <figure id="Location14"></figure>
 
         <!-- ===================== CHALLENGE 9 ===================== -->
         <div class="chart-description">
@@ -137,7 +150,7 @@
 
             </p>
         </div>
-        <figure id="Location13"></figure>
+        <figure id="Location15"></figure>
 
         <!-- ===================== CHALLENGE 10 ===================== -->
         <div class="chart-description">
@@ -146,7 +159,7 @@
 
             </p>
         </div>
-        <figure id="Location14"></figure>
+        <figure id="Location16"></figure>
 
     </section>
 
@@ -177,30 +190,34 @@
         vegaEmbed('#Location7', figure_7_spec)
         // ===================== CHALLENGE 4 =====================
 
-        let figure_8_spec = "";
-        vegaEmbed('#Location8', figure_8_spec)
+        let figure_8_spec = "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/chartreplication.json";
+        vegaEmbed('#Location9', figure_8_spec)
+   
+
+        let figure_9_spec = "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/chartimproved.json";
+        vegaEmbed('#Location10', figure_9_spec)
+        
         // ===================== CHALLENGE 5 =====================
 
-        let figure_9_spec = "";
-        vegaEmbed('#Location9', figure_9_spec)
+        let figure_10_spec = "";
+        vegaEmbed('#Location11', figure_10_spec)
         // ===================== CHALLENGE 6 =====================
 
-        let figure_10_spec = "";
-        vegaEmbed('#Location10', figure_10_spec)
+        let figure_11_spec = "";
+        vegaEmbed('#Location12', figure_11_spec)
         // ===================== CHALLENGE 7 =====================
 
-        let figure_11_spec = "";
-        vegaEmbed('#Location11', figure_11_spec)
-        // ===================== CHALLENGE 8 =====================
-
         let figure_12_spec = "";
-        vegaEmbed('#Location12', figure_12_spec)
-        // ===================== CHALLENGE 9 =====================
+        vegaEmbed('#Location13', figure_12_spec)
+        // ===================== CHALLENGE 8 =====================
         let figure_13_spec = "";
-        vegaEmbed('#Location13', figure_13_spec)
-        // ===================== CHALLENGE 10 =====================
+        vegaEmbed('#Location14', figure_13_spec)
+        // ===================== CHALLENGE 9 =====================
         let figure_14_spec = "";
-        vegaEmbed('#Location14', figure_14_spec)
+        vegaEmbed('#Location15', figure_14_spec)
+        // ===================== CHALLENGE 10 =====================
+        let figure_15_spec = "";
+        vegaEmbed('#Location16', figure_15_spec)
     </script>
 
 </body>
