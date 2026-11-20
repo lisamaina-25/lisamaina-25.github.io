@@ -1,0 +1,91 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
+  "width": 600,
+  "height": 350,
+  "data": {"url": "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/contraception_schoolyrs2025.csv"},
+"title": {
+   "text": "Modern contraceptive usage vs. average years of schooling for women", "fontSize":17.5,
+    "subtitle": [
+    "2025",
+    "Share of married or co-habiting women who use at least one modern method of contraception vs. the average years of",
+    "formal education that women between 15-64 years have attended."
+    ],
+    "align": "left",
+    "anchor": "start"
+  },
+  "layer": [
+    {
+      "mark": "circle",
+      "transform": [
+  {
+    "calculate": "datum['Contraception usage'] + '% (' + datum['Contraception usage (Original Year)'] + ')'",
+    "as": "contraception_with_year"
+  }
+],
+      "encoding": {
+        "x": {
+		"field": "Average years of schooling for women aged 15-64",
+		      "type": "quantitative",
+		      "scale": {"zero":false},
+		      "axis": {"values": [4, 6, 8, 10]}
+		},
+        "y": {
+		"field": "Contraception usage",
+		      "type": "quantitative",
+		      "scale": {"zero": true},
+		      "axis": {"values": [10, 20, 30, 40, 50, 60, 70],
+          "labelExpr": "datum.value + '%'"
+          }
+		},
+    "color": {
+      "field": "World region according to OWID", "type": "nominal", "title": null,   
+      "scale": {
+        "domain": ["North America", "South America", "Africa", "Europe", "Asia", "Oceania"],
+        "range": ["#e07b58", "#8c2e3b", "#a7568c", "#4c6a9c", "#2b8073", "#5ab4ac"]
+        }, 
+    "legend": {"symbolType": "square"}},
+        "size": {
+        "field": "Population", "type": "quantitative", 
+        "scale": {
+            "type": "threshold",
+            "domain": [1000000, 5000000, 20000000, 50000000, 150000000, 250000000],
+            "range": [0, 20, 80, 200, 600, 1000, 2000]
+      },
+      "legend": {"title": "Population", "format": "~s"}
+		},
+        "tooltip": [
+      {"field": "Entity", "type": "nominal", "title": "Country"},
+      {"field": "contraception_with_year", "type": "nominal", "title": "Contraception usage"},
+      {"field": "Average years of schooling for women aged 15-64", "type": "quantitative"},
+      {"field": "Population", "type": "quantitative", "format": ",", "title": "Population (people)"}
+    ]
+      }
+    },
+    {
+      "mark": {
+        "type": "text",
+        "align": "left",
+        "dx": 8,
+        "dy": -8
+      },
+      "transform": [
+        {"filter": "datum.Entity !== 'Senegal'"}
+        ],
+      "encoding": {
+        "x": {"field": "Average years of schooling for women aged 15-64", "type": "quantitative"},
+        "y": {"field": "Contraception usage", "type": "quantitative"},
+        "text": {"field": "Entity", "type": "nominal"},
+        "color":{
+           "field": "World region according to OWID",
+      "type": "nominal",
+      "scale": {
+        "domain": ["North America", "South America", "Africa", "Europe", "Asia", "Oceania"],
+        "range": ["#e07b58", "#8c2e3b", "#a7568c", "#4c6a9c", "#2b8073", "#5ab4ac"]
+        }
+      }
+    }}
+  ],
+  "config": {
+    "font":"'Playfair Display', Georgia, 'Times New Roman', 'Liberation Serif', serif"}
+
+}
