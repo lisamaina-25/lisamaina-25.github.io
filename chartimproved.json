@@ -1,8 +1,7 @@
 {
   "$schema": "https://vega.github.io/schema/vega-lite/v6.json",
   "description": "Bubble chart of modern contraceptive use against women's average years of schooling, by country, for 2015 and 2020. Bubble size shows population and color shows world region.",
-  "width": "container",
-  "autosize": {"type": "fit", "contains": "padding"},
+  "width": 600,
   "height": 350,
   "data": {
     "url": "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/contraception_schoolyrs15-20.csv"
