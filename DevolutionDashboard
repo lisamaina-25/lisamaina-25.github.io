@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Devolution Dashboard</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .chart { min-width: 0; }
+    @media (max-width: 800px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <h1>Healthy life expectancy across English regions</h1>
+  <p>Healthy life expectancy at birth, by sex, six English regions.</p>
+
+  <div class="grid" id="grid"></div>
+
+  <p>Data: OHID Fingertips. Code: <a href="YOUR_COLAB_LINK">Colab notebook</a></p>
+
+  <script>
+    // change this to your own raw GitHub address (up to and including /data/)
+    const base = "https://raw.githubusercontent.com/YOURNAME/YOURREPO/main/data/";
+
+    const regions = [
+      { file: "north_east.json", title: "North East" },
+      { file: "north_west.json", title: "North West" },
+      { file: "yorkshire_and_the_humber.json", title: "Yorkshire and the Humber" },
+      { file: "west_midlands.json", title: "West Midlands" },
+      { file: "london.json", title: "London" },
+      { file: "south_east.json", title: "South East" }
+    ];
+
+    const grid = document.getElementById("grid");
+
+    // one embed call, run six times
+    regions.forEach((r, i) => {
+      const div = document.createElement("div");
+      div.className = "chart";
+      div.id = "chart" + i;
+      grid.appendChild(div);
+
+      const spec = {
+        "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+        "title": r.title,
+        "width": "container",
+        "height": 220,
+        "data": { "url": base + r.file },
+        "mark": { "type": "line", "point": true },
+        "encoding": {
+          "x": { "field": "Time period", "type": "ordinal",
+                 "axis": { "labelAngle": -45, "title": null } },
+          "y": { "field": "Value", "type": "quantitative",
+                 "scale": { "zero": false },
+                 "axis": { "title": "Years" } },
+          "color": { "field": "Sex", "type": "nominal" },
+          "tooltip": [
+            { "field": "Time period" },
+            { "field": "Sex" },
+            { "field": "Value" }
+          ]
+        }
+      };
+
+      vegaEmbed("#chart" + i, spec, { actions: false });
+    });
+  </script>
+</body>
+</html>
