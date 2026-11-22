@@ -1,0 +1,170 @@
+[
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2011 - 13",
+    "Value":63.5
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2011 - 13",
+    "Value":63.7
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2012 - 14",
+    "Value":63.9
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2012 - 14",
+    "Value":64.0
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2013 - 15",
+    "Value":64.1
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2013 - 15",
+    "Value":64.3
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2014 - 16",
+    "Value":63.7
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2014 - 16",
+    "Value":64.5
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2015 - 17",
+    "Value":64.0
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2015 - 17",
+    "Value":64.4
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2016 - 18",
+    "Value":64.2
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2016 - 18",
+    "Value":64.3
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2017 - 19",
+    "Value":63.7
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2017 - 19",
+    "Value":64.0
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2018 - 20",
+    "Value":63.5
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2018 - 20",
+    "Value":64.8
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2019 - 21",
+    "Value":63.8
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2019 - 21",
+    "Value":64.8
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2020 - 22",
+    "Value":64.0
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2020 - 22",
+    "Value":64.2
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2021 - 23",
+    "Value":63.9
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2021 - 23",
+    "Value":64.0
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Male",
+    "Time period":"2022 - 24",
+    "Value":62.9
+  },
+  {
+    "Area Code":"E12000007",
+    "Area Name":"London region (statistical)",
+    "Sex":"Female",
+    "Time period":"2022 - 24",
+    "Value":62.9
+  }
+]
