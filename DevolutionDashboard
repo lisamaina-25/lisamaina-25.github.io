@@ -19,11 +19,11 @@
 
   <div class="grid" id="grid"></div>
 
-  <p>Data: OHID Fingertips. Code: <a href="YOUR_COLAB_LINK">Colab notebook</a></p>
+  <p>Data: OHID Fingertips. Code: <a href="https://colab.research.google.com/drive/1p2vWGld3uC46WejEAfi_LUlRa-COvdIX?usp=sharing">Colab notebook</a></p>
 
   <script>
     // change this to your own raw GitHub address (up to and including /data/)
-    const base = "https://raw.githubusercontent.com/YOURNAME/YOURREPO/main/data/";
+    const base = "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/dashboard%20data/";
 
     const regions = [
       { file: "north_east.json", title: "North East" },
