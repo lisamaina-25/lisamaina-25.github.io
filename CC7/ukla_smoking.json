@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Current smokers by local authority in England",
+    "fontSize": 15.5,
+    "subtitle": [
+      "2025",
+      "Share of adults self-reported as current smokers; Source: Office of National Statistics"
+    ],
+    "anchor": "start"
+  },
+  "width": 450,
+  "height": 550,
+  "config": {"view": {"stroke": "transparent"}},
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jhellingsdata/jhellingsdata.github.io/main/Data/UK%20Map%20Data/ITL1_2021_20m.geojson",
+        "format": {"property": "features"}
+      },
+      "transform": [
+        {
+          "filter": "indexof(['TLL','TLM','TLN'], datum.properties.ITL121CD) < 0"
+        }
+      ],
+      "mark": {
+        "type": "geoshape",
+        "fill": "#f2f2f2",
+        "stroke": "#8c8c8c",
+        "strokeWidth": 0.8
+      },
+      "encoding": {
+        "tooltip": [
+          {"field": "properties.ITL121NM", "type": "nominal", "title": "Region"}
+        ]
+      }
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/CC7/smoking_la_coordinates.csv"
+      },
+      "mark": {
+        "type": "circle",
+        "size": 45,
+        "opacity": 0.85,
+        "stroke": "#555555",
+        "strokeWidth": 0.4
+      },
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "color": {
+          "condition": {
+            "test": "!isValid(datum.current_smokers_pct)",
+            "value": "#999999"
+          },
+          "field": "current_smokers_pct",
+          "type": "quantitative",
+          "title": "Current smokers (%)",
+          "scale": {"scheme": "blues"}
+        },
+        "tooltip": [
+          {
+            "field": "local_auth",
+            "type": "nominal",
+            "title": "Local authority"
+          },
+          {
+            "field": "current_smokers_pct",
+            "type": "quantitative",
+            "title": "Current smokers (%)"
+          },
+          {
+            "field": "sample_size",
+            "type": "quantitative",
+            "title": "Sample size"
+          }
+        ]
+      }
+    }
+  ]
+}
