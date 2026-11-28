@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!-- This HTML file provides a simple example of a portfolio page. It contains a header, a few sections, and a few charts. -->
-<!-- It works with the three css files in this folder: example1.css, example2.css and example3.css. -->
-<!-- The HTML file defines the structure of the page, and the CSS files define how it looks. -->
-<!-- The CSS examples are all designed to work with this page. Try swapping them out on line 29 and see what happens. -->
-
-<!-- Take a look around and make your own copy to adapt for your own use. -->
-
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="Example3.css">
@@ -125,7 +118,7 @@
 
   <!-- ===================== CHALLENGE 7 ===================== -->
         <div class="chart-description">
-            <h2>Coding Challenge 7: </h2>
+            <h2>Coding Challenge 6: </h2>
             <p>
                 This <a href="https://lisamaina-25.github.io/DevolutionDashboard.html">Devolution Dashboard</a> shows sub-regional data for healthy life expectancy at birth, by sex, in six English regions. The data is from the Office for Health Improvement and Disparities (OHID) Fingertips API.
             </p>
@@ -134,10 +127,15 @@
         <div class="chart-description">
             <h2>Coding Challenge 7: </h2>
             <p>
-
+                Here I've mapped smoking prevalence in the UK over time, by nation. We can see that smoking prevalence has decreased over time, but Scotland remains the highest out of the UK nations. The data is from the Office of National Statistics (ONS).
             </p>
         </div>
         <figure id="Location13"></figure>
+            <p>
+                I've also mapped the smoking prevalence data across different local authorities in England in 2025. The data is from the Office of National Statistics (ONS).
+            </p>
+        </div>
+        <figure id="Location14"></figure>
 
         <!-- ===================== CHALLENGE 8 ===================== -->
         <div class="chart-description">
@@ -146,7 +144,7 @@
 
             </p>
         </div>
-        <figure id="Location14"></figure>
+        <figure id="Location15"></figure>
 
         <!-- ===================== CHALLENGE 9 ===================== -->
         <div class="chart-description">
@@ -155,7 +153,7 @@
 
             </p>
         </div>
-        <figure id="Location15"></figure>
+        <figure id="Location16"></figure>
 
         <!-- ===================== CHALLENGE 10 ===================== -->
         <div class="chart-description">
@@ -164,7 +162,7 @@
 
             </p>
         </div>
-        <figure id="Location16"></figure>
+        <figure id="Location17"></figure>
 
     </section>
 
@@ -214,17 +212,22 @@
         
         // ===================== CHALLENGE 7 =====================
 
-        let figure_12_spec = "";
+        let figure_12_spec = "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/CC7/uknations_smoking.json";
         vegaEmbed('#Location13', figure_12_spec)
-        // ===================== CHALLENGE 8 =====================
-        let figure_13_spec = "";
+  
+        let figure_13_spec = "https://raw.githubusercontent.com/lisamaina-25/lisamaina-25.github.io/refs/heads/main/CC7/ukla_smoking.json";
         vegaEmbed('#Location14', figure_13_spec)
-        // ===================== CHALLENGE 9 =====================
+        // ===================== CHALLENGE 8 =====================
         let figure_14_spec = "";
         vegaEmbed('#Location15', figure_14_spec)
-        // ===================== CHALLENGE 10 =====================
+
         let figure_15_spec = "";
         vegaEmbed('#Location16', figure_15_spec)
+
+        // ===================== CHALLENGE 9 =====================
+
+        // ===================== CHALLENGE 10 =====================
+
     </script>
 
 </body>
