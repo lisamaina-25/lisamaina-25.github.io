@@ -1,0 +1,5 @@
+year,area_code,nation,sex,age,current_smokers_pct,ex_smokers_pct,never_smoked_pct,total_nonsmokers_pct,weighted_count,sample_size
+2025,E92000001,England,All persons,All 18 and over,9.5,26.4,64.1,90.5,41965989,104498
+2025,W92000004,Wales,All persons,All 18 and over,11.1,27.2,61.7,88.9,2420705,13113
+2025,S92000003,Scotland,All persons,All 18 and over,11.4,25.7,63.0,88.7,4193182,16482
+2025,N92000002,Northern Ireland,All persons,All 18 and over,9.9,20.3,69.8,90.1,1417041,5571
